@@ -12,11 +12,17 @@
             <directory suffix="Test.php">./tests/Feature</directory>
         </testsuite>
     </testsuites>
-    <!-- <coverages>
+    <coverage>
         <include>
             <directory suffix=".php">./app</directory>
         </include>
-    </coverages> -->
+		<exclude>
+			<directory suffix=".php">./app/Console</directory>
+			<directory suffix=".php">./app/Exceptions</directory>
+			<directory suffix=".php">./app/Providers</directory>
+			<file>./app/Http/Kernel.php</file>
+		</exclude>
+    </coverage>
     <php>
         <env name="APP_ENV" value="testing"/>
         <env name="BCRYPT_ROUNDS" value="4"/>
